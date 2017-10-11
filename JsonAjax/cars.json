@@ -1,0 +1,20 @@
+{
+    "cars": [
+        {
+            "mark": "BMW",
+            "model": "E25"
+        },
+        {
+            "mark": "Fiat",
+            "model": "Bravo"
+        },
+        {
+            "mark": "Ford",
+            "model": "Focus"
+        },
+        {
+            "mark": "Rover",
+            "model": "600"
+        }
+    ]
+}

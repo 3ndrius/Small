@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JSONAjax</title>
+</head>
+<body>
+    
+    <ul id="people">
+        
+    </ul>
+    
+     <ul id="cars">
+        
+    </ul>
+    <script>
+        
+//    var person = {
+//        name:"Adam"
+//    }
+//    
+//    person = JSON.stringify(person);
+//    console.log(person.name);
+//    person= JSON.parse(person);
+//    console.log(person.name);
+//        
+//    var people = [
+//        {
+//            name:"Mateusz",
+//            age :22
+//        },
+//        {
+//            name:"Tomasz",
+//            age: 33
+//        }
+//        
+//    ]
+//    var output = "";
+//    for( var i=0; i<people.length; i++) {
+//        
+//        console.log(people[i].name);
+//        output += '<li>'+ people[i].name+'</li>';
+//    }
+//    
+//        document.getElementById('people').innerHTML=output;
+//        
+//    
+    
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var response = JSON.parse(xhttp.responseText);
+           console.log(response.cars);
+            var cars = response.cars;
+            
+        var output = "";
+        for(var i=0; i<cars.length; i++) {
+   
+            output += '<li>'+ cars[i].model+'</li>';
+        }
+        document.getElementById('cars').innerHTML=output;
+       }
+    };
+    xhttp.open("GET", "cars.json", true);
+    xhttp.send(); 
+
+    var output = "";
+    for(var i=0; i<cars.length; i++) {
+        
+        output += '<li>'+ cars[i].model+'</li>';
+    }
+    
+        document.getElementById('cars').innerHTML=output;
+        
+    </script>
+</body>
+</html>
